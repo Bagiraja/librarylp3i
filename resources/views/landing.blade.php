@@ -146,6 +146,13 @@ footer .social-links a:hover {
             font-size: 2rem;
             color: #00328E;
         }
+
+        .layanan-section .card-text {
+            font-size: 25px;
+            text-align: center;
+            max-width: 500px;
+            margin: 0 auto;
+        }
         
         @media (max-width: 768px) {
             .carousel-item img {
@@ -158,13 +165,22 @@ footer .social-links a:hover {
         justify-content: center !important;
         margin-top: 1rem;
     }
-
+    .layanan-section .card-text {
+            font-size: 25px;
+            text-align: center;
+            max-width: 400px;
+            margin: 0 auto;
+        }
             #announcementCarousel {
                 padding-top: 70px; /* Sesuaikan untuk mobile */
             }
 
             .navbar-brand h6 {
                 font-size: 0.9rem;
+            }
+
+            .navbar-brand img{
+                max-width: 100%;
             }
             .circular-card {
         max-width: 200px; /* Smaller circles on mobile devices */
@@ -183,7 +199,7 @@ footer .social-links a:hover {
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
-            <a class="navbar-brand d-flex align-items-center" href="#">
+            <   a class="navbar-brand d-flex align-items-center" href="#">
                 <img src="{{ asset('images/logolp31.png') }}" alt="Logo" style="width: 27%; height: auto;">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -192,7 +208,7 @@ footer .social-links a:hover {
 
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item mx-2">
+                    <li class="nav-item mx-2">  
                         <a class="nav-link" href="#layanan" style="color: #00328E;">Layanan</a>
                     </li>
                     <li class="nav-item mx-2">
@@ -241,7 +257,7 @@ footer .social-links a:hover {
                         <div class="card-body">
                             <i class="fas fa-book icon" style="font-size: 3rem; margin-top: 20px; color:#00328E;"></i> 
                             <h5 class="card-title mt-4 fs-4">Peminjaman Buku</h5>
-                            <p class="card-text" style="font-size: 25px; margin-top: 50px; width: 500px; margin-left: 27%;">Kami menyediakan layanan peminjaman buku untuk semua mahasiswa dan dosen.</p>
+                            <p class="card-text" style="font-size: 25px; margin-top: 50px; width: 500px; margin-led">Kami menyediakan layanan peminjaman buku untuk semua mahasiswa dan dosen.</p>
                         </div>
                     </div>
                 </div>
@@ -451,12 +467,24 @@ footer .social-links a:hover {
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({
             duration: 1200,
         });
+
+        // Close dropdown navbar on click outside
+        document.getElementById('navbar-toggler').addEventListener('click', function () {
+    const navbarNav = document.getElementById('navbarNav');
+    if (navbarNav.classList.contains('show')) {
+        navbarNav.classList.remove('show'); // Menutup dropdown
+    } else {
+        navbarNav.classList.add('show'); // Membuka dropdown
+    }
+});
+
+
     </script>
 </body>
 </html>
